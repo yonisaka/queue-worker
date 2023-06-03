@@ -59,7 +59,7 @@ func TestWorker_Hibiken(t *testing.T) {
 		asynq.RedisClientOpt{Addr: fmt.Sprintf("%s:%d", cfg.RedisConfig.Host, cfg.RedisConfig.Port)},
 		asynq.Config{
 			// Specify how many concurrent workers to use
-			Concurrency: 10,
+			Concurrency: 1,
 			// Optionally specify multiple queues with different priority.
 			Queues: map[string]int{
 				"critical": 6,

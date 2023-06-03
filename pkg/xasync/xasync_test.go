@@ -96,7 +96,6 @@ func TestWorker_Async(t *testing.T) {
 	worker := xasync.NewWorker(2, taskQueue, &wg)
 	worker.StartWorkers()
 
-	assert.True(t, true)
 	// Wait for termination signal or completion of all tasks
 	select {
 	case <-sigChan:
@@ -113,6 +112,5 @@ func TestWorker_Async(t *testing.T) {
 		case <-time.After(5 * time.Second):
 			fmt.Println("Graceful shutdown timed out. Exiting...")
 		}
-		os.Exit(0)
 	}
 }
